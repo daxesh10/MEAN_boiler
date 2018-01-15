@@ -1,0 +1,71 @@
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+<hr style="box-shadow: 30px;border: solid 2px;color: crimson;width: 60%;"><br>
+<div class="container">
+<form #myForm="ngForm">
+<div class="form-group">
+  <input type="url" name="inputUrl" class="form-control" [(ngModel)]="input" placeholder="Enter Url" required>
+  <input type="button" value="submit" class="form-control"  [disabled]="!check()" (click)="save()">
+</div>
+</form>
+</div>
+
+<!--<form FromGroup="myForm" (ngSubmit)="save()">
+  <input type="url" name="inputUrl" placeholder="Enter Url.." FormControlName="inputUrl" [(ngModel)]="input">
+  <input type="button" value="submit" [disabled]="!myForm.valid">
+</form>-->
+
+<br><br><br>
+
+
+
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>{{countRequest}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Count Request</h4>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>99</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Views</h4>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>URl</th>
+        <th>Domain</th>
+        <th>Counts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of myUrlList">
+          <td>{{item.url}}</td>
+       
+      </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
